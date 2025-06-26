@@ -1,0 +1,67 @@
+{
+  "VAL-BOX": {
+    "name": "Valentines Box",
+    "products": [
+      {
+        "productId": "VAL-001",
+        "productName": "Red Roses Bouquet",
+        "quantity": 1
+      },
+      {
+        "productId": "VAL-002",
+        "productName": "Box of chocolates",
+        "quantity": 1
+      },
+      {
+        "productId": "VAL-003",
+        "productName": "Love card",
+        "quantity": 1
+      },
+      {
+        "productId": "VAL-004",
+        "productName": "Women's perfume",
+        "quantity": 1
+      }
+    ]
+  },
+  "BDAY-BOX": {
+    "name": "Birthday Box",
+    "products": [
+      {
+        "productId": "BDAY-001",
+        "productName": "Birthday cupcake",
+        "quantity": 1
+      },
+      {
+        "productId": "BDAY-002",
+        "productName": "$100 Visa Gift Card",
+        "quantity": 1
+      },
+      {
+        "productId": "BDAY-003",
+        "productName": "Birthday card",
+        "quantity": 1
+      }
+    ]
+  },
+  "CLIENT-BOX": {
+    "name": "Client Gift Box",
+    "products": [
+      {
+        "productId": "CLIENT-001",
+        "productName": "Bottle of wine",
+        "quantity": 1
+      },
+      {
+        "productId": "CLIENT-002",
+        "productName": "Fruit basket",
+        "quantity": 1
+      },
+      {
+        "productId": "CLIENT-003",
+        "productName": "Pen",
+        "quantity": 1
+      }
+    ]
+  }
+} 
