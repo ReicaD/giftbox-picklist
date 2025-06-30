@@ -1,0 +1,124 @@
+[
+  {
+    "orderId": "ORD-001",
+    "orderTotal": 89.99,
+    "orderDate": "2024-01-15",
+    "shippingAddress": "123 Main St, New York, NY 10001",
+    "customerName": "John Smith",
+    "customerEmail": "john.smith@email.com",
+    "lineItems": [
+      {
+        "lineItemId": "LI-001",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-002",
+    "orderTotal": 179.98,
+    "orderDate": "2024-01-15",
+    "shippingAddress": "456 Oak Ave, Los Angeles, CA 90210",
+    "customerName": "Sarah Johnson",
+    "customerEmail": "sarah.j@email.com",
+    "lineItems": [
+      {
+        "lineItemId": "LI-002",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-003",
+        "productId": "BIRTHDAY-BOX",
+        "productName": "Birthday Box",
+        "price": 89.99
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-003",
+    "orderTotal": 129.99,
+    "orderDate": "2024-01-15",
+    "shippingAddress": "789 Pine St, Chicago, IL 60601",
+    "customerName": "Mike Davis",
+    "customerEmail": "mike.d@email.com",
+    "lineItems": [
+      {
+        "lineItemId": "LI-004",
+        "productId": "CLIENT-GIFT-BOX",
+        "productName": "Client Gift Box",
+        "price": 129.99
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-004",
+    "orderTotal": 359.96,
+    "orderDate": "2024-01-15",
+    "shippingAddress": "321 Elm St, Houston, TX 77001",
+    "customerName": "Lisa Wilson",
+    "customerEmail": "lisa.w@email.com",
+    "lineItems": [
+      {
+        "lineItemId": "LI-005",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-006",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-007",
+        "productId": "BIRTHDAY-BOX",
+        "productName": "Birthday Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-008",
+        "productId": "CLIENT-GIFT-BOX",
+        "productName": "Client Gift Box",
+        "price": 89.99
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-005",
+    "orderTotal": 449.95,
+    "orderDate": "2024-01-15",
+    "shippingAddress": "654 Maple Dr, Phoenix, AZ 85001",
+    "customerName": "Robert Brown",
+    "customerEmail": "robert.b@email.com",
+    "lineItems": [
+      {
+        "lineItemId": "LI-009",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-010",
+        "productId": "VALENTINE-BOX",
+        "productName": "Valentines Box",
+        "price": 89.99
+      },
+      {
+        "lineItemId": "LI-011",
+        "productId": "CLIENT-GIFT-BOX",
+        "productName": "Client Gift Box",
+        "price": 129.99
+      },
+      {
+        "lineItemId": "LI-012",
+        "productId": "CLIENT-GIFT-BOX",
+        "productName": "Client Gift Box",
+        "price": 129.99
+      }
+    ]
+  }
+] 

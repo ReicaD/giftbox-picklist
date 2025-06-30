@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "productId": "ROSES-001",
+      "productName": "Red Roses Bouquet",
+      "category": "Flowers",
+      "warehouseLocation": "A1-B3",
+      "weight": "2.5 lbs"
+    },
+    {
+      "productId": "CHOC-001", 
+      "productName": "Box of chocolates",
+      "category": "Confectionery",
+      "warehouseLocation": "B2-A1",
+      "weight": "1.2 lbs"
+    },
+    {
+      "productId": "CARD-001",
+      "productName": "Love card",
+      "category": "Cards",
+      "warehouseLocation": "C1-D2",
+      "weight": "0.1 lbs"
+    },
+    {
+      "productId": "PERF-001",
+      "productName": "Women's perfume",
+      "category": "Fragrance",
+      "warehouseLocation": "D3-C2",
+      "weight": "0.8 lbs"
+    },
+    {
+      "productId": "CAKE-001",
+      "productName": "Birthday cupcake",
+      "category": "Bakery",
+      "warehouseLocation": "E1-F2",
+      "weight": "0.5 lbs"
+    },
+    {
+      "productId": "GIFT-001",
+      "productName": "$100 Visa Gift Card",
+      "category": "Gift Cards",
+      "warehouseLocation": "F3-G1",
+      "weight": "0.1 lbs"
+    },
+    {
+      "productId": "CARD-002",
+      "productName": "Birthday card",
+      "category": "Cards", 
+      "warehouseLocation": "C1-D2",
+      "weight": "0.1 lbs"
+    },
+    {
+      "productId": "WINE-001",
+      "productName": "Bottle of wine",
+      "category": "Beverages",
+      "warehouseLocation": "G2-H3",
+      "weight": "3.2 lbs"
+    },
+    {
+      "productId": "FRUIT-001",
+      "productName": "Fruit basket",
+      "category": "Fresh Produce",
+      "warehouseLocation": "H1-I2",
+      "weight": "4.5 lbs"
+    },
+    {
+      "productId": "PEN-001",
+      "productName": "Pen",
+      "category": "Office Supplies",
+      "warehouseLocation": "I3-J1",
+      "weight": "0.2 lbs"
+    }
+  ]
+} 

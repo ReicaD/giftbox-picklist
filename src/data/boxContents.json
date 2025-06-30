@@ -1,0 +1,48 @@
+{
+  "VALENTINE-BOX": [
+    {
+      "productName": "Red Roses Bouquet",
+      "quantity": 1
+    },
+    {
+      "productName": "Box of chocolates",
+      "quantity": 1
+    },
+    {
+      "productName": "Love card",
+      "quantity": 1
+    },
+    {
+      "productName": "Women's perfume",
+      "quantity": 1
+    }
+  ],
+  "BIRTHDAY-BOX": [
+    {
+      "productName": "Birthday cupcake",
+      "quantity": 1
+    },
+    {
+      "productName": "$100 Visa Gift Card",
+      "quantity": 1
+    },
+    {
+      "productName": "Birthday card",
+      "quantity": 1
+    }
+  ],
+  "CLIENT-GIFT-BOX": [
+    {
+      "productName": "Bottle of wine",
+      "quantity": 1
+    },
+    {
+      "productName": "Fruit basket",
+      "quantity": 1
+    },
+    {
+      "productName": "Pen",
+      "quantity": 1
+    }
+  ]
+} 
