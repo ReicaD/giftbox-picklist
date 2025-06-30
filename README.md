@@ -26,19 +26,63 @@ src/
 └── index.css               # Basic styling
 ```
 
-## Data Structure
+## Data Structure Explained
 
-### Orders (orders.json)
-Customer orders containing:
-- Order ID, total, date, shipping address
-- Customer information
-- Line items with product IDs for gift boxes
+### 📦 boxContents.json - The Magic Mapping File
+This is the heart of our automation! It tells the system exactly what individual items are inside each gift box:
 
-### Box Contents (boxContents.json)
-Mapping of gift box IDs to individual warehouse items:
-- `VALENTINE-BOX` → Red Roses, Chocolates, Love Card, Perfume
-- `BIRTHDAY-BOX` → Cupcake, Gift Card, Birthday Card
-- `CLIENT-GIFT-BOX` → Wine, Fruit Basket, Pen
+**VALENTINE-BOX** breaks down into:
+- Red Roses Bouquet (1)
+- Box of chocolates (1) 
+- Love card (1)
+- Women's perfume (1)
+
+**BIRTHDAY-BOX** breaks down into:
+- Birthday cupcake (1)
+- $100 Visa Gift Card (1)
+- Birthday card (1)
+
+**CLIENT-GIFT-BOX** breaks down into:
+- Bottle of wine (1)
+- Fruit basket (1)
+- Pen (1)
+
+*When warehouse staff get an order for 3 Valentine Boxes, the system automatically knows they need to pick 3 roses, 3 chocolate boxes, 3 cards, and 3 perfumes!*
+
+### 📋 orders.json - Customer Order Data
+Real customer orders containing:
+- **Order Details**: ID, total price, order date
+- **Customer Info**: Name, email, shipping address  
+- **Line Items**: What gift boxes they ordered (references the box IDs above)
+
+Sample order structure:
+```json
+{
+  "orderId": "ORD-001",
+  "orderTotal": 89.99,
+  "orderDate": "2024-01-15",
+  "customerName": "John Smith",
+  "lineItems": [
+    {
+      "productId": "VALENTINE-BOX",
+      "productName": "Valentines Box",
+      "price": 89.99
+    }
+  ]
+}
+```
+
+### 📊 products.json - Product Catalog
+Complete inventory reference with warehouse locations and details for all individual items. Used for future features like location-based picking routes.
+
+## How It All Works Together
+
+1. **User selects a date** → System filters orders.json for that date
+2. **System finds gift boxes** in customer orders (VALENTINE-BOX, etc.)
+3. **Looks up individual items** using boxContents.json mapping
+4. **Consolidates quantities** across all orders (5 Valentine boxes = 5 roses, 5 chocolates, etc.)
+5. **Sorts alphabetically** for efficient warehouse navigation
+6. **Displays clean pick list** with totals for each item
 
 ## Key Features
 
@@ -65,4 +109,11 @@ Mapping of gift box IDs to individual warehouse items:
 
 ## Sample Data
 
-The application includes 5 sample orders for January 15, 2024, demonstrating the full workflow from gift box orders to individual item pick lists. 
+The application includes 5 sample orders for January 15, 2024, demonstrating the full workflow:
+- Orders contain various combinations of gift boxes
+- System automatically breaks them down and consolidates quantities
+- Final pick list shows exactly what warehouse staff need to collect
+
+## What Makes This Special
+
+This isn't just an inventory app - it's specifically designed for Cozey's gift box business model. The system understands that when customers order "Valentine Box", warehouse staff need to collect individual roses, chocolates, cards, and perfume. During busy seasons, instead of processing dozens of individual orders, staff get one clean list showing total quantities needed. 
