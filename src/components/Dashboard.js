@@ -2,25 +2,36 @@ import React, { useState, useEffect } from 'react';
 import ordersData from '../data/orders.json';
 import boxContents from '../data/boxContents.json';
 
+/**
+ * Dashboard Component - Main warehouse pick list interface
+ * Processes customer orders for gift boxes and generates consolidated pick lists
+ * for warehouse staff to efficiently collect items for multiple orders
+ */
 const Dashboard = () => {
-  const [pickList, setPickList] = useState([]);
-  const [selectedDate, setSelectedDate] = useState('2024-01-15');
-  const [totalOrders, setTotalOrders] = useState(0);
-  const [totalItems, setTotalItems] = useState(0);
+  // State management for the pick list application
+  const [pickList, setPickList] = useState([]); // Final consolidated pick list
+  const [selectedDate, setSelectedDate] = useState('2024-01-15'); // Date filter for orders
+  const [totalOrders, setTotalOrders] = useState(0); // Count of orders for selected date
+  const [totalItems, setTotalItems] = useState(0); // Total items to pick across all orders
 
+  // Main business logic - runs whenever the selected date changes
   useEffect(() => {
     const generatePickList = () => {
-      const itemCounts = {};
+      const itemCounts = {}; // Track quantities of each individual item
       let orderCount = 0;
       let itemCount = 0;
 
+      // Process each order to build consolidated pick list
       ordersData.forEach(order => {
+        // Only process orders for the selected date
         if (order.orderDate === selectedDate) {
           orderCount++;
           
+          // Break down each gift box into individual warehouse items
           order.lineItems.forEach(lineItem => {
-            const items = boxContents[lineItem.productId];
+            const items = boxContents[lineItem.productId]; // Get items for this gift box
             if (items) {
+              // Add each item to the consolidated count
               items.forEach(item => {
                 itemCounts[item.productName] = (itemCounts[item.productName] || 0) + item.quantity;
                 itemCount += item.quantity;
@@ -30,25 +41,28 @@ const Dashboard = () => {
         }
       });
 
+      // Convert item counts to array and sort alphabetically for easy warehouse navigation
       const pickListArray = Object.entries(itemCounts)
         .map(([productName, quantity]) => ({ productName, quantity }))
         .sort((a, b) => a.productName.localeCompare(b.productName));
 
+      // Update state with the generated pick list and statistics
       setPickList(pickListArray);
       setTotalOrders(orderCount);
       setTotalItems(itemCount);
     };
 
     generatePickList();
-  }, [selectedDate]);
+  }, [selectedDate]); // Regenerate pick list when date changes
 
+  // Inline styles for the dashboard UI (using Cozey's light mid-blue theme)
   const styles = {
     container: {
       maxWidth: '1200px',
       margin: '0 auto',
       padding: '20px',
       fontFamily: 'Arial, sans-serif',
-      backgroundColor: '#E1F5FE',
+      backgroundColor: '#E1F5FE', // Light blue background
       minHeight: '100vh'
     },
     header: {
@@ -57,13 +71,13 @@ const Dashboard = () => {
     },
     companyName: {
       fontSize: '48px',
-      color: '#0D47A1',
+      color: '#0D47A1', // Dark blue for company name
       margin: '0 0 10px 0',
       fontWeight: 'bold'
     },
     title: {
       fontSize: '32px',
-      color: '#1565C0',
+      color: '#1565C0', // Medium blue for title
       margin: '0 0 30px 0'
     },
     controls: {
@@ -75,7 +89,7 @@ const Dashboard = () => {
     dateInput: {
       padding: '10px',
       fontSize: '16px',
-      border: '2px solid #4FC3F7',
+      border: '2px solid #4FC3F7', // Light blue border
       borderRadius: '5px',
       backgroundColor: 'white'
     },
@@ -92,6 +106,7 @@ const Dashboard = () => {
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
       textAlign: 'center'
     },
+    // Color variants for statistics cards
     cardBlue: {
       backgroundColor: '#4FC3F7',
       color: 'white'
@@ -156,11 +171,13 @@ const Dashboard = () => {
 
   return (
     <div style={styles.container}>
+      {/* Header section with company branding */}
       <div style={styles.header}>
         <h1 style={styles.companyName}>Cozey</h1>
         <h2 style={styles.title}>🎁 Warehouse Pick List Dashboard</h2>
       </div>
 
+      {/* Date picker to filter orders */}
       <div style={styles.controls}>
         <input
           type="date"
@@ -170,6 +187,7 @@ const Dashboard = () => {
         />
       </div>
 
+      {/* Statistics cards showing order summary */}
       <div style={styles.statsCards}>
         <div style={{...styles.card, ...styles.cardBlue}}>
           <div style={styles.cardNumber}>{totalOrders}</div>
@@ -185,11 +203,13 @@ const Dashboard = () => {
         </div>
       </div>
 
+      {/* Main pick list table */}
       <div style={styles.tableContainer}>
         <div style={styles.tableHeader}>
           Items to Pick - {new Date(selectedDate).toLocaleDateString()}
         </div>
         
+        {/* Conditional rendering: show table if items exist, otherwise show no data message */}
         {pickList.length > 0 ? (
           <table style={styles.table}>
             <thead>
